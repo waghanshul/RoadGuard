@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Button animations */
+  .btn-hover-effect {
+    @apply transition-all duration-200 ease-in-out hover:scale-105;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-transform duration-200 ease-in-out hover:-translate-y-1;
+  }
+
+  /* Status badge animations */
+  .status-badge {
+    @apply transition-colors duration-200;
+  }
+
+  /* Icon animations */
+  .icon-spin {
+    @apply transition-transform duration-200 hover:rotate-12;
+  }
+
+  /* Navigation link animations */
+  .nav-link {
+    @apply relative transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 transition-all duration-200;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
